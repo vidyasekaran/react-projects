@@ -1,0 +1,47 @@
+why do we use name attribute in input in react
+Multiple fields + shared handler
+
+const [formData, setFormData] = useState({
+username: '',
+email: '',
+});
+
+const handleChange = (e) => {
+const { name, value } = e.target;
+setFormData((prev) => ({
+...prev,
+[name]: value
+}));
+};
+
+return (
+<>
+<input name="username" onChange={handleChange} />
+<input name="email" onChange={handleChange} />
+</>
+);
+
+Why it's useful:
+You can reuse the same handleChange for all inputs
+
+No need to write separate functions for username, email, etc.
+
+---
+
+why do we use value attribute in input in react
+
+const [name, setName] = useState('');
+
+return (
+<input
+type="text"
+value={name}
+onChange={(e) => setName(e.target.value)}
+/>
+);
+
+value={name} → React controls what’s shown in the box
+
+onChange updates the name state as the user types
+
+Without value, the input would be uncontrolled — the browser handles it on its own, and React doesn’t know its current value.
