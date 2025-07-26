@@ -1,7 +1,7 @@
 import React from "react";
 import Simplify from "./apps/todolist/Simplify";
 import Calculator from "./apps/calculator/Calculator";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import ExpenseEntry from "./apps/expense/ExpenseEntry";
@@ -16,7 +16,7 @@ import BookMgmt from "./apps/book/BookMgmt";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/todo" element={<Simplify />} />
         <Route path="/calculator" element={<Calculator />} />
@@ -30,7 +30,7 @@ function App() {
         <Route path="/spotify" element={<SpotifyTrackList />} />
         <Route path="/book" element={<BookMgmt />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 export default App;

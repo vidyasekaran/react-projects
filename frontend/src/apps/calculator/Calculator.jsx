@@ -15,8 +15,8 @@ function Calculator() {
 
   const handleEqual = () => {
     try {
-      setInput(eval(input).toString());
-      console.log("handleEqual eval(input)" + input);
+      // setInput(eval(input).toString());
+      //console.log("handleEqual eval(input)" + input);
     } catch {
       setInput("Error");
     }
